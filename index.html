@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+  Ferry Lane Brewing Lite — free one-page taproom template.
+  Free for personal and commercial use. Attribution appreciated.
+  Full version (What's pouring board, Visit, What's on, Story, four colour
+  packs, JSON data layer, Astro): see README.md.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ferry Lane Brewing Lite : free taproom template</title>
+<meta name="description" content="Ferry Lane Brewing Lite is a free one-page HTML template for brewery taprooms. Industrial register, label-tint colours, live open/closed line. Full Astro version available.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Staatliches&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><span>Ferry Lane</span><span>Brewing<em>.</em></span></a>
+    <a class="tel" href="tel:+441632960118">01632 960 118</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-img"><img src="img/hero.jpg" alt="The taproom under the brewery roof trusses, tanks behind the glass wall and lamps over the tables" fetchpriority="high"></div>
+  <div class="wrap">
+    <div class="hazbar" aria-hidden="true"></div>
+    <h1>Brewed here. <span class="uw">Poured</span> here.</h1>
+    <p class="h-sub">Six of our own beers on tap at the brewery on Ferry Lane, Stanmere. Dogs welcome, kids till eight, no bookings needed.</p>
+    <div class="h-cta">
+      <a class="btn" href="#hours">Opening hours</a>
+      <a class="btn ghost" href="tel:+441632960118">Ring 01632 960 118</a>
+    </div>
+  </div>
+</section>
+
+<!-- the six beers -->
+<section class="shelf">
+  <div class="wrap">
+    <div class="s-head">
+      <h2>We make six beers.</h2>
+      <p>Four stay the same, two change with the season. Every one of them is brewed <b>twenty feet from the tap that pours it.</b></p>
+    </div>
+    <div class="labelrow">
+      <div class="can c1">
+        <span class="abv">4.8%</span>
+        <span class="nm">Pale</span>
+        <span class="st">Citra and Mosaic, finished dry.</span>
+      </div>
+      <div class="can c2">
+        <span class="abv">4.2%</span>
+        <span class="nm">Lager</span>
+        <span class="st">Helles. Four weeks in tank, nowhere to hide.</span>
+      </div>
+      <div class="can c3">
+        <span class="abv">4.1%</span>
+        <span class="nm">Bitter</span>
+        <span class="st">Best bitter on the hand pull. The regulars' pick.</span>
+      </div>
+      <div class="can c4">
+        <span class="abv">4.6%</span>
+        <span class="nm">Stout</span>
+        <span class="st">Oat stout. Black, smooth, not sweet.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- the taproom -->
+<section class="room">
+  <div class="wrap r-grid">
+    <div class="ph reveal"><img src="img/bar.jpg" alt="A full taproom under the unit's exposed ductwork and brick"></div>
+    <div class="r-tx">
+      <h2>The taproom.</h2>
+      <p>Long benches, the tanks through the glass, and a food truck in the yard most weekends. <b>No bookings, just come.</b></p>
+      <p>If beer is not your thing, the fridge has proper soft drinks and an alcohol-free version of the pale.</p>
+    </div>
+  </div>
+</section>
+
+<section class="closer" id="hours">
+  <div class="wrap">
+    <p class="cl-door" id="doorLine">Checking the doors.</p>
+    <div class="cl-grid">
+      <div class="cl-hours">
+        <div class="cl-hr"><span class="cl-day">Thursday</span><span class="cl-time">16:00 to 22:00</span></div>
+        <div class="cl-hr"><span class="cl-day">Friday</span><span class="cl-time">14:00 to 23:00</span></div>
+        <div class="cl-hr"><span class="cl-day">Saturday</span><span class="cl-time">12:00 to 23:00</span></div>
+        <div class="cl-hr"><span class="cl-day">Sunday</span><span class="cl-time">12:00 to 20:00</span></div>
+      </div>
+      <div class="cl-side">
+        <p class="cl-addr">Unit 6, Ferry Lane Works<br>Stanmere SR2 4JF</p>
+        <a class="tel" href="tel:+441632960118">01632 960 118</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-line">
+      <span class="fbrand">Ferry Lane Brewing<em>.</em></span>
+      <span>Unit 6, Ferry Lane Works, Stanmere SR2 4JF</span>
+      <a href="tel:+441632960118">01632 960 118</a>
+      <span>Closed Monday to Wednesday</span>
+      <span>&copy; Ferry Lane Brewing 2026</span>
+    </div>
+    <p class="foot-disc">A fictional brewery. Free demo template by Mike Smith Design. Photography is placeholder, replace for production.</p>
+  </div>
+</footer>
+
+<script src="lenis.min.js"></script>
+<script>
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!REDUCED && window.Lenis) {
+  const lenis = new Lenis({ lerp: .09 });
+  (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })();
+}
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  e.preventDefault();
+  document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+}));
+
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: .16 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+if (REDUCED) document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+
+/* live doors status: edit HOURS to match your taproom (day 0 = Sunday, no key = closed) */
+const HOURS = { 0: [12, 20], 4: [16, 22], 5: [14, 23], 6: [12, 23] };
+const now = new Date(), day = now.getDay(), hr = now.getHours() + now.getMinutes() / 60;
+const today = HOURS[day], isOpen = !!today && hr >= today[0] && hr < today[1];
+const fmt = x => { const h = Math.floor(x), m = Math.round((x - h) * 60); return h + ':' + String(m).padStart(2, '0'); };
+document.getElementById('doorLine').textContent = isOpen
+  ? 'Open till ' + fmt(today[1]) + ' today.'
+  : (today && hr < today[0] ? 'Opens ' + fmt(today[0]) + ' today.' : 'Closed today.');
+</script>
+</body>
+</html>
