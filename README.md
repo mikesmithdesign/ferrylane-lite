@@ -40,4 +40,4 @@ and taproom hire, a What's on events page with a mailing list signup, a
 Story page with a photo lightbox, four colour packs, and JSON-driven content
 (rebrand the whole site from one data folder), built as an Astro 7 project.
 
-→ https://mikesmithdesign.gumroad.com/l/ferrylane-astro-theme (£20)
+→ [Ferry Lane, the full Astro theme for breweries and taprooms](https://mikesmithdesign.co.uk/themes/ferrylane) (£20)
